@@ -1,0 +1,7 @@
+== ctor hooks loaded base=0x7ffc9f060000 count=28 ==
+all attached
+CTOR 0x6a35b0 tid=17592 rcx=0x2d1809b0010 rdx=0x7ffca70be4e8 r8=0x30000
+CTOR 0x6a36b0 tid=17592 rcx=0x2d1809b0010 rdx=0xfd003ef6a8 r8=0x2d1f120ca80
+CTOR 0x6a36b0 tid=16332 rcx=0x2d1fbf014b0 rdx=0xfd7972a1c0 r8=0x2d1f120cd80
+CTOR 0x6a4650 tid=33092 rcx=0x2d1fbf014b0 rdx=0x0 r8=0x2d1f121a100
+CTOR 0x6a3c70 tid=33092 rcx=0x2d1fbf014b0 rdx=0x0 r8=0x2d1f120cd80

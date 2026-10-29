@@ -1,0 +1,19 @@
+== pack-sticker swap loaded base=0x7ffb5b470000 live=true ==
+attached pack 0x160EBE0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+TICK packHits=0 swaps=0
+PACK#1 tid=29476
+  +0x08=5 slot0=ca9d0631d936ad6fd5893f663d98650d (len=32 cap=47)
+  slot1=com.tencent.xin.emoticon.person.stiker_17857793930522dbd144c584fd (len=65)
+  载体 同专辑其它成员（不在成员表内） md5=ca9d0631d936ad6fd5893f663d98650d  ->  目标 [0] 表情包成员 A md5=1b09ef505de4501c4f77569207864e4b
+  write slot0 -> OK
+  after slot0 = 1b09ef505de4501c4f77569207864e4b (len=32)
+  SWAP#1 完成
+

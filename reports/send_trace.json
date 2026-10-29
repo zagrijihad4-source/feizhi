@@ -1,0 +1,34 @@
+{
+  "counts": {
+    "pack": 1,
+    "send": 1
+  },
+  "log": [
+    {
+      "kind": "pack",
+      "from": "0x7ffca066e30f",
+      "vec": null,
+      "arg2": "0x127a14a3c0",
+      "arg2_hex": "b0a3154771010000a0a3154771010000e8773ca7fc7f0000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "kind": "send",
+      "from": "0x7ffca0707b5c",
+      "rcx": "0x17144e60400",
+      "out": {
+        "ptr": "0xaaaaaaaaaaaaaaaa",
+        "refc": "0xaaaaaaaaaaaaaaaa",
+        "obj_vt": null,
+        "obj_vt_rva": null
+      },
+      "in": {
+        "ptr": "0x17144e60400",
+        "refc": "0x17144e603f0",
+        "obj_vt": "0x7ffca732b8d8",
+        "obj_vt_rva": 137148632
+      },
+      "r9": "0x127bcfebb8",
+      "in_obj_d8": 47
+    }
+  ]
+}

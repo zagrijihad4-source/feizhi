@@ -1,0 +1,89 @@
+目标: C:\Program Files\Tencent\Weixin\4.1.9.23\Weixin.dll
+文件大小 179,819,056 字节
+
+段表:
+  .text    VA=0x00001000 VSize= 102.64MB RawPtr=0x00000400 RawSize= 102.64MB
+  .rdata   VA=0x066a6000 VSize=  54.97MB RawPtr=0x066a5000 RawSize=  54.97MB
+  .data    VA=0x09d9e000 VSize=   7.99MB RawPtr=0x09d9d000 RawSize=   7.57MB
+  .pdata   VA=0x0a59d000 VSize=   5.05MB RawPtr=0x0a52e400 RawSize=   5.05MB
+  .gxfg    VA=0x0aaab000 VSize=   0.02MB RawPtr=0x0aa3c000 RawSize=   0.02MB
+  .qtmetad VA=0x0aaaf000 VSize=   0.00MB RawPtr=0x0aa40000 RawSize=   0.00MB
+  .qtmimed VA=0x0aab0000 VSize=   0.32MB RawPtr=0x0aa40400 RawSize=   0.32MB
+  .tls     VA=0x0ab03000 VSize=   0.01MB RawPtr=0x0aa92800 RawSize=   0.01MB
+  _RDATA   VA=0x0ab05000 VSize=   0.00MB RawPtr=0x0aa94200 RawSize=   0.00MB
+  malloc_h VA=0x0ab06000 VSize=   0.00MB RawPtr=0x0aa94400 RawSize=   0.00MB
+  .rsrc    VA=0x0ab07000 VSize=   0.11MB RawPtr=0x0aa94600 RawSize=   0.11MB
+  .reloc   VA=0x0ab23000 VSize=   0.79MB RawPtr=0x0aab0400 RawSize=   0.79MB
+
+=== 1) 特征串位置 ===
+  cdnthumburl      rva=0x07fb7ce4 [.rdata] 'cdnthumburl'
+  cdnbigimgurl     rva=0x08422242 [.rdata] 'cdnbigimgurl'
+  cdnbigimgurl     rva=0x0842602a [.rdata] 'cdnbigimgurl_pd_pri'
+  cdnbigimgurl     rva=0x0842603e [.rdata] 'cdnbigimgurl_pd'
+  cdnthumbaeskey   rva=0x080d85e2 [.rdata] 'cdnthumbaeskey'
+  cdnmidimgurl     rva=0x0842224f [.rdata] 'cdnmidimgurl'
+  cdnmidimgurl     rva=0x0842604e [.rdata] 'cdnmidimgurl_pd_pri'
+  cdnmidimgurl     rva=0x08426062 [.rdata] 'cdnmidimgurl_pd'
+  emoticonmd5      rva=0x080d854c [.rdata] 'emoticonmd5'
+
+=== 2) 扫描 .text (102.6MB) ===
+命中 25 处
+
+=== 3) 按特征串汇总 ===
+  cdnthumburl        7 处  0x1b7fe0, 0xa19c00, 0xa1cce1, 0x2180a6f, 0x218215c, 0x21d2c8a, 0x21d458e
+  cdnthumbaeskey     6 处  0xa19db1, 0xa1ce7d, 0x2180b44, 0x218243d, 0x21d2d59, 0x21d4851
+  cdnmidimgurl       5 处  0x21809eb, 0x2181afa, 0x2181e8c, 0x21cdd54, 0x21cdd9c
+  cdnbigimgurl       4 处  0x21809ac, 0x2181c3f, 0x21cdcc4, 0x21cdd0c
+  emoticonmd5        3 处  0xa199b9, 0xa19aa6, 0xa1d221
+
+=== 4) 命中点上下文（前 32 字节 / 后 32 字节）===
+  [cdnthumburl] instr_rva=0x1b7fe0
+    48 8D 05 06 FD DF 07 C3 CC CC CC CC CC CC CC CC 48 8D 05 FF FC DF 07 C3 CC CC CC CC CC CC CC CC | 48 8D 05 FD FC DF 07 C3 CC CC CC CC CC CC CC CC 48 8D 05 F9 FC DF 07 C3 CC CC CC CC CC CC CC CC
+  [emoticonmd5] instr_rva=0xa199b9
+    89 F9 E8 70 5D B8 FF 48 83 BE 48 03 00 00 10 72 03 4D 8B 36 48 8D 4D E0 4C 89 F2 E8 57 9D B8 FF | 4C 8D 05 8C EB 6B 07 48 8D 4D D8 4C 8D 75 B8 4C 89 F2 E8 C0 63 B8 FF 48 8D 55 E0 4C 89 F1 E8 34
+  [emoticonmd5] instr_rva=0xa19aa6
+    89 F9 E8 83 5C B8 FF 48 83 BE 48 03 00 00 10 72 03 4D 8B 36 48 8D 4D E0 4C 89 F2 E8 6A 9C B8 FF | 4C 8D 05 9F EA 6B 07 48 8D 4D D8 4C 8D 75 B8 4C 89 F2 E8 D3 62 B8 FF 48 8D 55 E0 4C 89 F1 E8 47
+  [cdnthumburl] instr_rva=0xa19c00
+    89 F9 E8 29 5B B8 FF 48 8D 96 90 03 00 00 48 83 BE A8 03 00 00 10 72 78 4C 89 EB 48 8B 12 EB 73 | 4C 8D 05 DD E0 59 07 48 8D 4D D8 4C 89 FA E8 7D 61 B8 FF 48 8D 55 E0 4C 89 F9 E8 F1 5A B8 FF 48
+  [cdnthumbaeskey] instr_rva=0xa19db1
+    00 00 74 58 4C 8D BE B0 03 00 00 4C 89 F1 E8 1C 48 08 00 84 C0 74 09 4C 8D 05 75 DF 59 07 EB 07 | 4C 8D 05 2A E8 6B 07 48 8D 4D D8 4C 8D 75 B8 4C 89 F2 E8 C8 5F B8 FF 48 8D 55 E0 4C 89 F1 E8 3C
+  [cdnthumburl] instr_rva=0xa1cce1
+    00 00 48 8D 9D 40 04 00 00 48 89 DA E8 3E 7F 6D FF 48 89 D9 E8 16 52 5E FF 4C 89 AD F8 03 00 00 | 4C 8D 05 FC AF 59 07 48 8D 8D 68 04 00 00 48 8D 95 F8 03 00 00 E8 B5 28 B8 FF 90 48 8D 8D F8 03
+  [cdnthumbaeskey] instr_rva=0xa1ce7d
+    FF 90 84 C0 75 13 48 8B 8D 00 03 00 00 E8 E1 1B 43 00 90 89 86 D8 03 00 00 4C 89 AD 80 01 00 00 | 4C 8D 05 5E B7 6B 07 48 8D 8D 68 04 00 00 48 8D 95 80 01 00 00 E8 19 27 B8 FF 90 48 8D 8D 80 01
+  [emoticonmd5] instr_rva=0xa1d221
+    00 00 48 8D 9D 40 04 00 00 48 89 DA E8 FE 79 6D FF 48 89 D9 E8 D6 4C 5E FF 4C 89 AD 30 04 00 00 | 4C 8D 05 24 B3 6B 07 48 8D 8D 68 04 00 00 48 8D 95 30 04 00 00 E8 75 23 B8 FF 90 48 8D 8D 30 04
+  [cdnbigimgurl] instr_rva=0x21809ac
+    00 00 00 44 89 F2 E8 39 E2 41 FE 90 4C 8D B7 C0 01 00 00 48 83 BF D8 01 00 00 10 72 03 4D 8B 36 | 4C 8D 05 8F 18 2A 06 48 8D 8D 00 02 00 00 48 8D 95 90 00 00 00 E8 2A EF 41 FE 90 48 8D 8D 90 00
+  [cdnmidimgurl] instr_rva=0x21809eb
+    00 00 00 4C 89 F2 E8 7A DF 41 FE 90 4C 8D B7 E8 01 00 00 48 83 BF 00 02 00 00 10 72 03 4D 8B 36 | 4C 8D 05 5D 18 2A 06 48 8D 8D 00 02 00 00 48 8D 95 90 00 00 00 E8 EB EE 41 FE 90 48 8D 8D 90 00
+  [cdnthumburl] instr_rva=0x2180a6f
+    8D 8D 90 00 00 00 E8 F6 DE 41 FE 90 4C 8D B7 10 02 00 00 48 83 BF 28 02 00 00 10 72 03 4D 8B 36 | 4C 8D 05 6E 72 E3 05 48 8D 8D 00 02 00 00 48 8D 95 90 00 00 00 E8 67 EE 41 FE 90 48 8D 8D 90 00
+  [cdnthumbaeskey] instr_rva=0x2180b44
+    00 00 00 44 89 F2 E8 A1 E0 41 FE 90 4C 8D B7 30 02 00 00 48 83 BF 48 02 00 00 10 72 03 4D 8B 36 | 4C 8D 05 97 7A F5 05 48 8D 8D 00 02 00 00 48 8D 95 90 00 00 00 E8 92 ED 41 FE 90 48 8D 8D 90 00
+  [cdnmidimgurl] instr_rva=0x2181afa
+    89 A5 00 02 00 00 4C 89 AD 08 02 00 00 4C 89 F1 4C 89 FA 4D 89 E0 E8 2B C2 51 04 43 C6 04 26 00 | 4C 8D 05 4E 07 2A 06 48 8D 8D 80 02 00 00 48 8D 95 50 02 00 00 E8 0C DB 41 FE 90 48 8D 15 91 C7
+  [cdnbigimgurl] instr_rva=0x2181c3f
+    00 4C 89 F1 48 89 DA E8 D5 0B EB FD 90 E9 E4 00 00 00 0F 29 B5 60 02 00 00 0F 29 B5 50 02 00 00 | 4C 8D 05 FC 05 2A 06 48 8D 8D 80 02 00 00 48 8D 95 30 02 00 00 E8 C7 D9 41 FE 90 48 8D 15 4C C6
+  [cdnmidimgurl] instr_rva=0x2181e8c
+    89 F9 4C 89 CA 4D 89 F0 E8 A7 BE 51 04 43 C6 04 37 00 0F 29 B5 40 02 00 00 0F 29 B5 30 02 00 00 | 4C 8D 05 BC 03 2A 06 48 8D 8D 80 02 00 00 48 8D 95 10 02 00 00 E8 7A D7 41 FE 90 48 8D 15 FF C3
+  [cdnthumburl] instr_rva=0x218215c
+    89 F9 4C 89 CA 49 89 D8 E8 D7 BB 51 04 41 C6 04 1F 00 0F 29 B5 20 02 00 00 0F 29 B5 10 02 00 00 | 4C 8D 05 81 5B E3 05 48 8D 8D 80 02 00 00 48 8D 95 D0 01 00 00 E8 AA D4 41 FE 90 48 8D 15 2F C1
+  [cdnthumbaeskey] instr_rva=0x218243d
+    89 F9 4C 89 CA 4D 89 F0 E8 F6 B8 51 04 43 C6 04 37 00 0F 29 B5 E0 01 00 00 0F 29 B5 D0 01 00 00 | 4C 8D 05 9E 61 F5 05 48 8D 8D 80 02 00 00 48 8D 95 78 02 00 00 E8 C9 D1 41 FE 90 48 8D 15 4E BE
+  [cdnbigimgurl] instr_rva=0x21cdcc4
+    19 3D FE 90 48 8D 8D 40 02 00 00 E8 9C 47 01 FE 90 84 C0 0F 85 20 01 00 00 48 89 9D 58 01 00 00 | 4C 8D 05 5F 83 25 06 48 8D 8D 40 02 00 00 48 8D 95 58 01 00 00 E8 42 19 3D FE 90 48 8D 8D 58 01
+  [cdnbigimgurl] instr_rva=0x21cdd0c
+    84 C0 75 15 48 8D 8D 58 01 00 00 31 D2 E8 A2 0A 3D FE 90 89 86 08 01 00 00 48 89 9D 58 02 00 00 | 4C 8D 05 2B 83 25 06 48 8D 8D 40 02 00 00 48 8D 95 58 02 00 00 E8 FA 18 3D FE 90 48 8D 8D 58 02
+  [cdnmidimgurl] instr_rva=0x21cdd54
+    84 C0 75 15 48 8D 8D 58 02 00 00 31 D2 E8 5A 0A 3D FE 90 89 86 0C 01 00 00 48 89 9D 68 02 00 00 | 4C 8D 05 F3 82 25 06 48 8D 8D 40 02 00 00 48 8D 95 68 02 00 00 E8 B2 18 3D FE 90 48 8D 8D 68 02
+  [cdnmidimgurl] instr_rva=0x21cdd9c
+    84 C0 75 15 48 8D 8D 68 02 00 00 31 D2 E8 12 0A 3D FE 90 89 86 10 01 00 00 48 89 9D 60 02 00 00 | 4C 8D 05 BF 82 25 06 48 8D 8D 40 02 00 00 48 8D 95 60 02 00 00 E8 6A 18 3D FE 90 48 8D 8D 60 02
+  [cdnthumburl] instr_rva=0x21d2c8a
+    00 00 00 48 89 DA E8 DB BC 3C FE 90 48 8D 9F 60 02 00 00 48 83 BF 78 02 00 00 10 72 03 48 8B 1B | 4C 8D 05 53 50 DE 05 48 8D 8D B0 01 00 00 48 8D 95 90 00 00 00 E8 4C CC 3C FE 90 48 8D 8D 90 00
+  [cdnthumbaeskey] instr_rva=0x21d2d59
+    90 00 00 00 89 DA E8 8C BE 3C FE 90 48 8D 9F 80 02 00 00 48 83 BF 98 02 00 00 10 72 03 48 8B 1B | 4C 8D 05 82 58 F0 05 48 8D 8D B0 01 00 00 48 8D 95 90 00 00 00 E8 7D CB 3C FE 90 48 8D 8D 90 00
+  [cdnthumburl] instr_rva=0x21d458e
+    89 F1 4C 89 CA 4D 89 E0 E8 A5 97 4C 04 43 C6 04 26 00 0F 29 B5 E0 02 00 00 0F 29 B5 D0 02 00 00 | 4C 8D 05 4F 37 DE 05 48 8D 8D 30 03 00 00 48 8D 95 10 03 00 00 E8 78 B0 3C FE 90 48 8D 15 FD 9C
+  [cdnthumbaeskey] instr_rva=0x21d4851
+    89 F9 4C 89 CA 49 89 F0 E8 E2 94 4C 04 41 C6 04 37 00 0F 29 B5 20 03 00 00 0F 29 B5 10 03 00 00 | 4C 8D 05 8A 3D F0 05 48 8D 8D 30 03 00 00 48 8D 95 B0 02 00 00 E8 B5 AD 3C FE 90 48 8D 15 3A 9A

@@ -1,0 +1,81 @@
+{
+  "send_entry": [
+    {
+      "kind": "send_entry",
+      "caller_rva": "0x165b8c8",
+      "rcx": "0x1f58b157980",
+      "rdx": "0xa4041feff0",
+      "r8": "0xa4041fefa0",
+      "r8_as_shared": {
+        "sp_addr": "0xa4041fefa0",
+        "_Ptr": "0x1f58d277110",
+        "_Rep": "0x1f58d277100",
+        "ptr_vt_rva": "0x865dec8",
+        "ptr_vt_kind": "请求/任务上下文（0x16A77E0 的 R8._Ptr）",
+        "ptr_hex": "c8de6ba7fc7f0000007e6b84f5010000f07d6b84f50100005000cc8ff50100004000cc8ff501000010f79885f501000000f79885f501000080376e85f5010000000000000000000013000000000000001f000000000000000000000000000000000000000000000000000000000000000000000000000000f0e4248df5010000",
+        "rep_vt_rva": "0x82c9cd8"
+      },
+      "r8_as_obj": {
+        "ptr": "0xa4041fefa0",
+        "vt_rva": null,
+        "hex": "1071278df50100000071278df50100000000000000000000000000000000000090ee1f04a400000000000000000000000000000000000000000000000000000000000000000000000000000000000000aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "vt_kind": null
+      },
+      "rdx_as_shared": {
+        "sp_addr": "0xa4041feff0",
+        "_Ptr": "0xaaaaaaaaaaaaaaaa",
+        "_Rep": "0xaaaaaaaaaaaaaaaa",
+        "ptr_vt_rva": null,
+        "ptr_vt_kind": null,
+        "ptr_hex": null,
+        "rep_vt_rva": null
+      },
+      "rdx_as_obj": {
+        "ptr": "0xa4041feff0",
+        "vt_rva": null,
+        "hex": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab0b26ba0fc7f0000",
+        "vt_kind": null
+      },
+      "rcx_vt_rva": "0x82c74f8",
+      "rcx_vt_kind": "发送上下文 ctx（会话/服务管理器）"
+    }
+  ],
+  "generic": [
+    {
+      "kind": "generic",
+      "caller_rva": "0x16575b5",
+      "rcx_vt_rva": "0x82c74f8",
+      "rcx_vt_kind": "发送上下文 ctx（会话/服务管理器）",
+      "rdx": {
+        "ptr": "0x1f58d277148",
+        "vt_rva": null,
+        "hex": "80376e85f5010000000000000000000013000000000000001f000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "vt_kind": null
+      },
+      "r8": {
+        "ptr": "0x1f5811af200",
+        "vt_rva": null,
+        "hex": "700e1981f501000070427585f50100000000000000000000702a9885f50100000000000000000000000000000000000000000000000000000000000000000000",
+        "vt_kind": null
+      }
+    },
+    {
+      "kind": "generic",
+      "caller_rva": "0x16f7ed7",
+      "rcx_vt_rva": "0x82c74f8",
+      "rcx_vt_kind": "发送上下文 ctx（会话/服务管理器）",
+      "rdx": {
+        "ptr": "0x1f58a3389d0",
+        "vt_rva": null,
+        "hex": "6085a18ff5010000000000000000000013000000000000001f0000000000000000000000000000004c7d1fca70060088080c1ba7fc7f0000bfbd434338304644",
+        "vt_kind": null
+      },
+      "r8": {
+        "ptr": "0x1f5811af500",
+        "vt_rva": null,
+        "hex": "300f1981f501000050357684f501000060f2678af501000010e4a485f50100000000000000000000000000000000000000000000000000000000000000000000",
+        "vt_kind": null
+      }
+    }
+  ]
+}

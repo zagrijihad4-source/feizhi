@@ -1,0 +1,276 @@
+[
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "C:\\Users\\api62\\Pictures\\Screenshots\\屏幕截图 2024-10-31 190955.png",
+    "bt": [
+      "0xffff81c28e69d62b",
+      "0xffff81c28e630f15",
+      "0xffff81c28e615dc0",
+      "0xffff81c28e65bf5a",
+      "0xffff81c28e5f5467",
+      "0xffff81c28e675e39",
+      "0xffff81c28e66bcbf",
+      "0xfffffff900c96683",
+      "0xfffffff900c8ad26",
+      "0xfffffff900c77043"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "C:/Users/api62/Pictures/Screenshots/屏幕截图 2024-10-31 190955.png",
+    "bt": [
+      "0x4961ac",
+      "0x39989dd",
+      "0x3998239",
+      "0x399bd16",
+      "0x399c1b2",
+      "0x1ce9ce",
+      "0xe542de",
+      "0xe546fd",
+      "0x587dd3",
+      "0x4c3f4ac"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "C:/Users/api62/Pictures/Screenshots/屏幕截图 2024-10-31 190955.png",
+    "bt": [
+      "0x496c6c",
+      "0x489272",
+      "0xd4ad0e",
+      "0x3998c3e",
+      "0x3998239",
+      "0x399bd16",
+      "0x399c1b2",
+      "0x1ce9ce",
+      "0xe542de",
+      "0xe546fd"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "C:/Users/api62/Pictures/Screenshots/屏幕截图 2024-10-31 190955.png",
+    "bt": [
+      "0x66690f0",
+      "0x66695e8",
+      "0x6668e85",
+      "0x6696e8a",
+      "0x6665c30",
+      "0x4a8b67",
+      "0x6ff6f",
+      "0x409f5a0",
+      "0x1f66997",
+      "0x1f80f12"
+    ]
+  },
+  {
+    "kind": "inner",
+    "hook": "send_commit",
+    "self": "0x1c18821c500",
+    "bt": [
+      "0x160e30f",
+      "0x160de2d",
+      "0x1b043ec",
+      "0x1afc857",
+      "0x1afa6e8",
+      "0x1b1515d",
+      "0x262100",
+      "0x1a92416",
+      "0x50b268",
+      "0x5ed3f0"
+    ],
+    "strs": []
+  },
+  {
+    "kind": "inner",
+    "hook": "imgxml_xml",
+    "self": "0x1c18a511380",
+    "bt": [
+      "0x9d8926",
+      "0x1438322",
+      "0x13751f8",
+      "0x3184c3e",
+      "0x1373383",
+      "0xe6e945",
+      "0x13ff2bf",
+      "0x34a7fac",
+      "0x2b831d0",
+      "0x3238da"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "D:\\xwechat_files\\<WXID_SELF>_dfb4\\msg\\attach\\89ad7cb37164df01448412d7b63829b1\\2026-10\\Img\\64bcdf11f4ad1b23c4aa5fea694528b7_h.dat",
+    "bt": [
+      "0x54d5fe",
+      "0x54be88",
+      "0x54bd51",
+      "0x96ec99",
+      "0x9774f0",
+      "0x48ecc7",
+      "0x48ed5c",
+      "0xa10146",
+      "0x323c11",
+      "0x587dd3"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "D:\\xwechat_files\\<WXID_SELF>_dfb4\\msg\\attach\\89ad7cb37164df01448412d7b63829b1\\2026-10\\Img\\64bcdf11f4ad1b23c4aa5fea694528b7_h.dat",
+    "bt": [
+      "0x54d5fe",
+      "0x54be88",
+      "0x54bd51",
+      "0x972a6d",
+      "0x4839f0",
+      "0x4847a3",
+      "0x2ef1fe",
+      "0x323c11",
+      "0x587dd3",
+      "0x4c3f4ac"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "D:\\xwechat_files\\<WXID_SELF>_dfb4\\msg\\attach\\89ad7cb37164df01448412d7b63829b1\\2026-10\\Img\\64bcdf11f4ad1b23c4aa5fea694528b7_t.dat",
+    "bt": [
+      "0x54d5fe",
+      "0x54be88",
+      "0x54bd51",
+      "0x96ec99",
+      "0x975a3f",
+      "0x976a94",
+      "0x9fa4f3",
+      "0x323c11",
+      "0x587dd3",
+      "0x4c3f4ac"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "D:\\xwechat_files\\<WXID_SELF>_dfb4\\msg\\attach\\89ad7cb37164df01448412d7b63829b1\\2026-10\\Img\\64bcdf11f4ad1b23c4aa5fea694528b7_t.dat",
+    "bt": [
+      "0x54d5fe",
+      "0x54be88",
+      "0x54bd51",
+      "0x972a6d",
+      "0x4839f0",
+      "0x4847a3",
+      "0x2ef1fe",
+      "0x323c11",
+      "0x587dd3",
+      "0x4c3f4ac"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "D:\\xwechat_files\\<WXID_SELF>_dfb4\\msg\\attach\\89ad7cb37164df01448412d7b63829b1\\2026-10\\Img\\64bcdf11f4ad1b23c4aa5fea694528b7_h.dat",
+    "bt": [
+      "0x54d5fe",
+      "0x54be88",
+      "0x54bd51",
+      "0x972a6d",
+      "0x926c21",
+      "0x2eeb57",
+      "0x323c11",
+      "0x587dd3",
+      "0x4c3f4ac",
+      "0x4c3ef9e"
+    ]
+  },
+  {
+    "kind": "inner",
+    "hook": "imgxml_xml",
+    "self": "0x1c18a511380",
+    "bt": [
+      "0x9d8962",
+      "0x34e0ad7",
+      "0x16a6b23",
+      "0x165b8c8",
+      "0x16575b5",
+      "0x1658ffb",
+      "0x160f54b",
+      "0xc0fcca",
+      "0x39e91a",
+      "0x39d8ba"
+    ]
+  },
+  {
+    "kind": "inner",
+    "hook": "imgxml_xml",
+    "self": "0x1c18a511380",
+    "bt": [
+      "0x9d8962",
+      "0x34e1caf",
+      "0x16aa3ca",
+      "0x16f7f30",
+      "0x292b8c",
+      "0xc0fcca",
+      "0x39e91a",
+      "0x39d8ba",
+      "0x64b5e50",
+      "0xffff81c283564400"
+    ]
+  },
+  {
+    "kind": "file",
+    "hook": "CreateFileW",
+    "path": "D:\\xwechat_files\\<WXID_SELF>_dfb4\\msg\\attach\\89ad7cb37164df01448412d7b63829b1\\2026-10\\Img\\64bcdf11f4ad1b23c4aa5fea694528b7_h.dat",
+    "bt": [
+      "0x54d5fe",
+      "0x54be88",
+      "0x54bd51",
+      "0x979567",
+      "0x9794b1",
+      "0x4891f2",
+      "0xa0e98b",
+      "0x323c11",
+      "0x587dd3",
+      "0x4c3f4ac"
+    ]
+  },
+  {
+    "kind": "inner",
+    "hook": "imgxml_xml",
+    "self": "0x1c18a511380",
+    "bt": [
+      "0x4fe6182",
+      "0x34e2c49",
+      "0x16f9e98",
+      "0x16f91db",
+      "0x292b8c",
+      "0xc0fcca",
+      "0x39e91a",
+      "0x39d8ba",
+      "0x64b5e50",
+      "0xffff800100550001"
+    ]
+  },
+  {
+    "kind": "inner",
+    "hook": "send_commit",
+    "self": "0x1c191448f00",
+    "bt": [
+      "0x160e30f",
+      "0x160de2d",
+      "0x1afe0de",
+      "0x1b13808",
+      "0x262100",
+      "0x83c8c5",
+      "0x8e0d2a",
+      "0x262100",
+      "0x83d60a",
+      "0x1b6a7aa"
+    ],
+    "strs": []
+  }
+]

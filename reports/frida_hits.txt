@@ -1,0 +1,14 @@
+== script loaded, base=0x7ffc9f060000 ==
+attached send_entry @ 0x7ffca07060d0
+attached pack @ 0x7ffca066ebe0
+attached db40 @ 0x7ffc9f06db40
+attached env_factory @ 0x7ffca0b5e710
+attached env_factory2 @ 0x7ffca0735b80
+attached env_ctor @ 0x7ffca07640a0
+attached emoji_ctor @ 0x7ffca066df80
+attached task_ctor @ 0x7ffca2550a70
+attached content_ctor @ 0x7ffca06535c0
+env_factory tid=33936 rcx=0x1e5a3bd0000 rdx=0x14f r8=0x24 r9=0x40
+db40 tid=33936 rcx=0x1e5a3bd0400 rdx=0x1e5a3bd0900 r8=0x1e5a3bd0980 r9=0x1e5a3bd0a00
+pack tid=33936 rcx=0x1e5a3bd0100 rdx=0x1e5a3bd0400 r8=0xfffffd8e08bc6dff r9=0x34 models=1
+send_entry tid=2468 rcx=0x1e5a7ed4a50 rdx=0x40ccffef90 r8=0x40ccffef40 r9=0x40ccffea28

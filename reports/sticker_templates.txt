@@ -1,0 +1,58 @@
+收藏表情模板库  （共 7 个）
+======================================================================
+
+[0fbdd73cc59f210845f4d2457b0167b8]  完整=True
+  spec_md5   : 9558c0a6b75d4821b7b68c2eecb19eac
+  aux_md5    : 8cbd585dba8bb6cc4d5c0a7ccfead51d
+  url_20401  : len=324  m=0fbdd73cc59f210845f4d2457b0167b8  (== lib_md5: True)
+  url_20403  : len=322  m=3e5a0552c232deabe5a0d4e8a6aa0422
+  url_20402  : len=324  m=1e0ce94dc8da48370f4614709973271c
+  示例 receiver: <WXID_FRIEND_A>
+
+[53dcede756bc62e5e7cfb3eca4c3b5c5]  完整=True
+  spec_md5   : 47a7ee64be7f48bea221fff11c1afcef
+  aux_md5    : d85a76430c0abecd1715fc0b723b0e20
+  url_20401  : len=324  m=53dcede756bc62e5e7cfb3eca4c3b5c5  (== lib_md5: True)
+  url_20403  : len=322  m=f0b6c132c1bf914a6b3988e987f975b2
+  url_20402  : len=324  m=7430d39e838150c21e91969c2b1e0cc7
+  示例 receiver: <WXID_FRIEND_A>
+
+[7ed206382321db118c4951f1e448166a]  完整=True
+  spec_md5   : 49cd60dd1f354795b1334bf655a189a5
+  aux_md5    : 96d1ce52eeffc92219b7524763fbf5d5
+  url_20401  : len=324  m=7ed206382321db118c4951f1e448166a  (== lib_md5: True)
+  url_20403  : len=322  m=5f3c31ac7ae8771f51519ce40409ed7a
+  url_20402  : len=324  m=455d847059730c65bff4e247110bfd03
+  示例 receiver: <WXID_FRIEND_A>
+
+[b90ff3bbdb9eb50b8324bb7d6631a3ef]  完整=True
+  spec_md5   : 957d07571c034bba8d2ecfec7266f181
+  aux_md5    : 245b5f04c2d19a6ea5cc7a63bb978aae
+  url_20401  : len=324  m=b90ff3bbdb9eb50b8324bb7d6631a3ef  (== lib_md5: True)
+  url_20403  : len=322  m=8dbf645611ebb473c7c56f417e421d49
+  url_20402  : len=324  m=e61d9ddc83e7d47b2fc51014dc9f1475
+  示例 receiver: <WXID_FRIEND_A>
+
+[cbab1418a65ab56a82b228ea2a27c621]  完整=True
+  spec_md5   : 7901cc692c1442f49374e9f9722e44d8
+  aux_md5    : c69a8064b008420fdc9cfbaca518df7a
+  url_20401  : len=324  m=cbab1418a65ab56a82b228ea2a27c621  (== lib_md5: True)
+  url_20403  : len=322  m=1d6df9a373105c40206f31512982f91c
+  url_20402  : len=324  m=b4ede003a7df784d24142eb451ef2f66
+  示例 receiver: <WXID_FRIEND_A>
+
+[ccfabb49a1904b17159ba9f6bb9b3782]  完整=True
+  spec_md5   : 1402a1e027bd42e885ecc990381318e0
+  aux_md5    : 203cb0736f7a726941e01062a3d38431
+  url_20401  : len=324  m=ccfabb49a1904b17159ba9f6bb9b3782  (== lib_md5: True)
+  url_20403  : len=322  m=3f2307c65a07d7373125a2c7a56b2a01
+  url_20402  : len=324  m=d1cc6393f7fb0693c317b7624021e58f
+  示例 receiver: <WXID_FRIEND_A>
+
+[d727ccdf2475c436206cbc8ec3fa30b9]  完整=True
+  spec_md5   : cd784b225d1948b986dca2d013196923
+  aux_md5    : 63d09b6fac72997727e5430db24f8f92
+  url_20401  : len=324  m=d727ccdf2475c436206cbc8ec3fa30b9  (== lib_md5: True)
+  url_20403  : len=322  m=0fb3fed79b06e10dfcb1cd95355fafcb
+  url_20402  : len=324  m=8724a7bc86b8cb42b08834f4168c3399
+  示例 receiver: <WXID_FRIEND_A>

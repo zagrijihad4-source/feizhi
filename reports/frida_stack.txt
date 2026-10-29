@@ -1,0 +1,57 @@
+== deep stack loaded base=0x7ffc9f060000 ==
+all attached
+HIT scheduler tid=16332 rcx=0x2d1fa53fc90 rdx=0x0 r8=0x2d1f1204c80 r9=0x0
+  bt: 0x6d8072615d005c < 0x6b8072616c0074 < 0xffff800360f9fffe < 0xffff82d55563aa80
+
+HIT scheduler tid=16332 rcx=0x4 rdx=0x2d1f469ac00 r8=0x2d1f469aa80 r9=0xfd7972bb70
+  bt: 0xffff8100da6cbb48 < 0xffff82d5543b58d0 < 0xaaaa2aae0ba4aaaa < 0xffff82d4e39232f0
+  rdx->vt=0xffff805a60fa0002
+
+HIT scheduler tid=16332 rcx=0x2d1f5649080 rdx=0x0 r8=0x2d1f12234c0 r9=0xfd7972b588
+  bt: 0xffff8100da6cbb48 < 0xffff82d5543b58d0 < 0xaaaa2aae0ba4aaaa < 0xffff82d4e39232f0
+
+HIT scheduler tid=16332 rcx=0xe24c30ca00000004 rdx=0x2d1f1a11040 r8=0x2d1f12234c0 r9=0xfd7972b588
+  bt: 0xffff8100da6cbb48 < 0xffff82d5543b58d0 < 0xaaaa2aae0ba4aaaa < 0xffff82d4e39232f0
+  rdx->vt=0xe24bb0cd60fa0004
+
+HIT scheduler tid=16332 rcx=0x2d1f5649080 rdx=0x0 r8=0x2d1f12234c0 r9=0xfd7972b588
+  bt: 0xffff8100da6cbb48 < 0xffff82d5543b58d0 < 0xaaaa2aae0ba4aaaa < 0xffff82d4e39232f0
+
+HIT scheduler tid=16332 rcx=0xfd7972b960 rdx=0x1a1328f1400 r8=0x258e8f r9=0x0
+  bt: 0xffff8100da6cbb48 < 0xffff82d5543b58d0 < 0xaaaa2aae0ba4aaaa < 0xffff82d4e39232f0
+
+HIT scheduler tid=16332 rcx=0x2d1f375e8c0 rdx=0x0 r8=0x2d1f1204c80 r9=0xb
+  bt: 0xffff82d55c1109f0 < 0xb4ef57 < 0xffff800360f9fffe < 0xffff800360fa0007 < 0xaaaa2aae0ba4aaaa
+
+HIT scheduler tid=16332 rcx=0x2d1faf40180 rdx=0x7ffca7704188 r8=0xb r9=0x7ffca70e8a80
+  bt: 0xffff800360f9fffe
+  rdx->vt=0x3754cb0
+
+HIT scheduler tid=16332 rcx=0x2d1857f32d0 rdx=0x0 r8=0x2d1f120c480 r9=0x7ffca56fdde6
+  bt: 0xffff8100da6cbb48
+
+HIT scheduler tid=16332 rcx=0x2d1f5649080 rdx=0x0 r8=0x2d1f12234c0 r9=0xfd7972ad98
+  bt: 0xffff8100da6cbb48
+
+HIT scheduler tid=16332 rcx=0x2200f5463db2 rdx=0x0 r8=0x0 r9=0xfd7972ae00
+  bt: 0xffff8100da6cbb48
+
+HIT scheduler tid=16332 rcx=0x2200f5463db2 rdx=0x0 r8=0xfd7972a701 r9=0x0
+  bt: 0xffff800360fa0030 < 0x64a7d3b < 0xffff82d555617cc0 < 0xffff800360fa3fcc < 0xffff82d555636bf0 < 0xffff82d5543817f0
+
+HIT task_poster tid=16332 rcx=0x2d1fba8bc50 rdx=0xfd7972aca0 r8=0xfd7972ac80 r9=0xfd7972ae20
+  bt: 0x1b6a7aa < 0x262100
+  rdx->vt=0xffff82d55cb82b70
+
+HIT send_logic tid=16332 rcx=0x1 rdx=0x2d1f4ce9970 r8=0x2d1fad73310 r9=0xfd7972ac20
+  bt: 0x262100
+  rdx->vt=0xffff800360fa0002
+
+HIT layer_1afd280 tid=16332 rcx=0x2d1fa91c6e0 rdx=0xfd7972a650 r8=0xfd7972ac80 r9=0xfd7972a830
+  bt: 0x1b13808 < 0x262100 < 0xffff8100da6cbb48
+  rdx->vt=0xffff82d55cb82b70
+
+HIT emoji_ctor tid=16332 rcx=0xfd7972a470 rdx=0xfd7972a2f8 r8=0xfd7972a1d0 r9=0xfd7972a190
+  bt: 0x160de2d < 0x1afe0de < 0x1b13808 < 0x262100 < 0xffff8100da6cbb48
+  rdx->vt=0xffff82d4e18b9280
+

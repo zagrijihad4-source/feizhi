@@ -1,0 +1,26 @@
+== sticker swap loaded base=0x7ffb5b470000 live=true target=0 ==
+attached pack 0x160EBE0
+PACK tid=29476 models=1
+  model0 vt=0x82cb8d8
+    content=0x18e40e9d460 vt=0x8755528
+      before slot0 lib_md5 len=32 cap=47 : cbab1418a65ab56a82b228ea2a27c621
+      before slot2 spec_md5 len=32 cap=47 : 7901cc692c1442f49374e9f9722e44d8
+      before slot6 url_20401 len=324 cap=335 : http://vweixinf.tc.qq.com/110/20401/stodownload?m=cbab1418a65ab56a82b228ea2a27c621&filekey=30440201010430302e02016e0402534804206362616231343138613635616235366138326232323865613261323763363231020301bd8f040d00000004627466730000000132&hy=SH&storeid=26a5d7bd4000eef3fe36a4af20000006e01004fb153481c6e9661502d4eb91&ef=1&bizid=1022
+      before slot7 url_20403 len=322 cap=335 : http://vweixinf.tc.qq.com/110/20403/stodownload?m=1d6df9a373105c40206f31512982f91c&filekey=3043020101042f302d02016e040253480420316436646639613337333130356334303230366633313531323938326639316302022320040d00000004627466730000000132&hy=SH&storeid=26a5d7bd50001aa6ee36a4af20000006e03004fb353481c6e9661502d4ebb3&ef=3&bizid=1022
+      before slot8 aux_md5 len=32 cap=47 : c69a8064b008420fdc9cfbaca518df7a
+      before slot9 url_20402 len=324 cap=335 : http://vweixinf.tc.qq.com/110/20402/stodownload?m=b4ede003a7df784d24142eb451ef2f66&filekey=30440201010430302e02016e0402534804206234656465303033613764663738346432343134326562343531656632663636020301bd90040d00000004627466730000000132&hy=SH&storeid=26a5d7bd50000bc9ce36a4af20000006e02004fb253481c6e9661502d4eba2&ef=2&bizid=1022
+      carrier=cbab1418a65ab56a82b228ea2a27c621  ->  target[0]=0fbdd73cc59f210845f4d2457b0167b8
+      write slot0 lib_md5 -> OK
+      write slot2 spec_md5 -> OK
+      write slot6 url_20401 -> OK
+      write slot7 url_20403 -> OK
+      write slot8 aux_md5 -> OK
+      write slot9 url_20402 -> OK
+      after  slot0 len=32 : 0fbdd73cc59f210845f4d2457b0167b8
+      after  slot2 len=32 : 9558c0a6b75d4821b7b68c2eecb19eac
+      after  slot6 len=324 : http://vweixinf.tc.qq.com/110/20401/stodownload?m=0fbdd73cc59f210845f4d2…
+      after  slot7 len=322 : http://vweixinf.tc.qq.com/110/20403/stodownload?m=3e5a0552c232deabe5a0d4…
+      after  slot8 len=32 : 8cbd585dba8bb6cc4d5c0a7ccfead51d
+      after  slot9 len=324 : http://vweixinf.tc.qq.com/110/20402/stodownload?m=1e0ce94dc8da48370f4614…
+      SWAP#1 完成
+
