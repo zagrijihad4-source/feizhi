@@ -1,0 +1,33 @@
+{
+  "_comment": "feizhi_pc 生图配置。provider 决定走哪套协议：sanbao（当前可用）或 aistarslab。",
+  "_note_sanbao": "三宝 sanbaobeauty.com：POST /openapi/v1/images 创建 -> GET /openapi/v1/images/{id} 轮询；quality 只认 high/medium/low；aspect_ratio 用 1:1 / 3:4 / 16:9 这类比例名。",
+  "_note_aistarslab": "AIStarsLab：POST {base}/generation/create/image（需 channel+quality=1K/2K/4K）。2026-10-14 起该账号积分不足，暂不可用。",
+  "provider": "synapse",
+  "sanbao": {
+    "baseURL": "https://sanbaobeauty.com",
+    "apiKey": "<YOUR_API_KEY>",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "_aspectRatio_note": "实测只有 16:9 稳定（12 credits 档）；3:4 / 1:1 / 9:16 / 4:3 会走 0.8 credits 的另一档，频繁「未生成预期内容」。故固定 16:9，竖构图在生成后裁切。",
+    "aspectRatio": "16:9",
+    "cropToPortrait": true,
+    "personaRefUrl": "<YOUR_ASSET_URL>",
+    "userToken": "<YOUR_TOKEN>"
+  },
+  "synapse": {
+    "_note": "现用主线路：OpenAI 兼容，POST {base}/images/generations。2026-10-27 实测 58s、832x1248 原生竖构图，握笔的手结构正常。★ size 必须是 832x1248（2:3）：传旧的 1024x1536 / 1536x1024 会返回 HTTP 400，错误体是一段中文说明而不是图片，看起来很像接口挂了，其实是尺寸参数变了。",
+    "baseURL": "https://synapse-ai.uk/v1",
+    "apiKey": "<YOUR_API_KEY>",
+    "model": "gpt-image-2",
+    "size": "832x1248"
+  },
+  "aistarslab": {
+    "_note": "已弃用：2026-10-14 起该账号积分不足",
+    "baseURL": "https://api.video.aistarslab.com/openapi",
+    "apiKey": "<YOUR_API_KEY>",
+    "model": "gemini-3-pro-image-preview",
+    "channel": "23",
+    "quality": "1K"
+  },
+  "timeoutSec": 300
+}

@@ -1,0 +1,30 @@
+{
+  "_comment": "绯栀 TTS 配置。凭据只在本文件内，不要写进脚本或日志。",
+  "provider": "breeze",
+  "_provider_note": "breeze 为第一优先级（2026-10-27 接入）。回退把 provider 改回 \"mimo\" 即可，两套配置都保留。",
+  "breeze": {
+    "_note": "Breeze Blue。★ 输出格式必须走 query 参数 ?output_format=wav —— 放进 body 会 422 extra_forbidden，Accept 头也无效（仍回 mp3）。★ 文本里可直接插 34 个中文音频标签：[笑][轻笑][咯咯笑][叹气][惊呼][喘息][耳语][喊叫][唱歌][哼歌][结巴][清嗓][咳嗽][咂嘴][啧嘴][打哈欠][闷哼][冷笑][哼鼻子] 等。★ 单请求 1000 字符上限，中文超 500 字服务端自动切段（段间补 0.25 秒静音）。★ guidance_scale 实测不如直接插标签有效（3 反而把 F0 起伏从 109.8 降到 85.8），留 null。",
+    "base_url": "https://api.breezeblue.ai",
+    "api_key": "<YOUR_API_KEY>",
+    "model": "breeze-tts-2",
+    "voice_id": "voc_f6hmxqkrnj8e",
+    "language_code": "zh",
+    "output_format": "wav",
+    "guidance_scale": 3,
+    "speed": null
+  },
+  "mimo": {
+    "base_url": "https://api.xiaomimimo.com/v1/chat/completions",
+    "api_key": "<YOUR_API_KEY>",
+    "model": "mimo-v2.5-tts-voiceclone",
+    "voice": "冰糖",
+    "clone_sample": "<PROJECT_ROOT>",
+    "format": "wav",
+    "_voice_note": "音色 = 用户选定的「冷清慵懒」(B)，由 voicedesign 生成样本后经 voiceclone 固化。clone_sample 就是那段样本，换音色只需替换它。"
+  },
+  "output": {
+    "sample_rate": 16000,
+    "channels": 1,
+    "pcm_dir": "<PROJECT_ROOT>"
+  }
+}

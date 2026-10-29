@@ -1,0 +1,73 @@
+# 运行时配置（含密钥，绝不入库）
+feizhi_pc/llm_config.json
+feizhi_pc/tts_config.json
+feizhi_pc/image_config.json
+feizhi_pc/breeze_voice.json
+feizhi_pc/breeze_voice_mimo.json
+feizhi_pc/image_config.json.bak-*
+*.env
+.env
+
+# 状态、记忆、聊天数据
+feizhi_pc/state/
+feizhi_pc/logs/
+feizhi_pc/tmp/
+feizhi_pc/voice/
+feizhi_pc/images/
+feizhi_pc/eval/
+feizhi_pc/gate/**/test_work/
+wx-basic-bridge/bridge/
+wx-basic-bridge/feizhi_pc_state/
+wx-basic-bridge/dist/
+
+# 音频、模型、样本
+*.wav
+*.mp3
+*.flac
+*.pcm
+*.pth
+*.index
+*.onnx
+*.pt
+*.ckpt
+sing/checkpoints/
+sing/pretrained_models/
+sing/outputs/
+sing/source/
+sing/wheels/
+
+# 编译产物与二进制
+*.dll
+*.o
+*.obj
+*.lib
+*.exe
+*.bin
+*.pyc
+__pycache__/
+build/
+dist/
+
+# 媒体与截图
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# 日志与临时
+*.log
+*.tmp
+*.bak
+*.bak2_*
+*.bak3_*
+*.bak4_*
+*.curl
+
+# 第三方参考仓库
+ref/
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

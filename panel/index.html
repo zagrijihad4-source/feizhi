@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>绯栀</title>
+<style>
+  :root{
+    --bg:#0a0910; --panel:#12101a; --panel2:#171523;
+    --line:#241f31; --line2:#332b45;
+    --fg:#ece7f2; --dim:#8b8199; --dim2:#5d5470;
+    --hot:#f0436c; --hot-dim:#7a2137; --ok:#3ddc97; --warn:#f5a623;
+    --mono:"JetBrains Mono",Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:
+      radial-gradient(1100px 600px at 15% -15%, #2b0f1e 0%, transparent 62%),
+      radial-gradient(800px 500px at 105% 5%, #101b2b 0%, transparent 58%),
+      var(--bg);
+    color:var(--fg);
+    font:14.5px/1.65 "Microsoft YaHei","PingFang SC",system-ui,sans-serif;
+    overflow:hidden;
+  }
+  ::-webkit-scrollbar{width:8px;height:8px}
+  ::-webkit-scrollbar-thumb{background:#2d2640;border-radius:4px}
+  ::-webkit-scrollbar-thumb:hover{background:#3d3455}
+  ::-webkit-scrollbar-track{background:transparent}
+
+  .shell{height:100%;display:flex;flex-direction:column}
+
+  /* ---- 顶部：她的存在感 ---- */
+  header{
+    display:flex;align-items:center;gap:16px;padding:14px 22px;
+    border-bottom:1px solid var(--line);flex:0 0 auto;
+  }
+  .avatar{
+    width:42px;height:42px;border-radius:50%;flex:0 0 auto;
+    background:radial-gradient(circle at 32% 28%, #ff7d9c, #a81232 70%);
+    box-shadow:0 0 0 1px #4a1830, 0 0 22px -4px rgba(240,67,108,.6);
+    display:grid;place-items:center;font-size:18px;
+  }
+  .who{display:flex;flex-direction:column;gap:1px;min-width:0}
+  .who b{font-size:17px;letter-spacing:3px;font-weight:600}
+  .who span{font-size:11.5px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw}
+  .beats{margin-left:auto;display:flex;gap:7px;align-items:center;flex:0 0 auto}
+  .beat{
+    display:flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;
+    border:1px solid var(--line2);font:11px var(--mono);color:var(--dim);
+  }
+  .beat i{width:6px;height:6px;border-radius:50%;background:var(--dim2);flex:0 0 auto}
+  .beat.on i{background:var(--ok);animation:pulse 2.6s infinite}
+  .beat.off i{background:#ff4d6d}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .beat b{color:var(--fg);font-weight:600}
+
+  /* ---- 主体：左对话 右工具 ---- */
+  .stage{flex:1;display:grid;grid-template-columns:minmax(0,1fr) 400px;min-height:0}
+
+  .talk{display:flex;flex-direction:column;min-height:0;border-right:1px solid var(--line)}
+  .stream{flex:1;overflow-y:auto;padding:22px 26px 8px;display:flex;flex-direction:column;gap:2px}
+
+  .daymark{align-self:center;font:10.5px var(--mono);color:var(--dim2);padding:14px 0 8px;letter-spacing:1px}
+  .line{display:flex;gap:10px;max-width:min(76%,620px);margin:3px 0;animation:rise .22s ease-out}
+  @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .line.her{align-self:flex-end;flex-direction:row-reverse}
+  .line .face{
+    width:26px;height:26px;border-radius:50%;flex:0 0 auto;margin-top:2px;
+    background:linear-gradient(140deg,#38263f,#1d1828);display:grid;place-items:center;
+    font-size:11px;color:var(--dim);border:1px solid var(--line2);
+  }
+  .line.her .face{background:radial-gradient(circle at 34% 30%,#ff85a1,#8e1029);border-color:#5a1c2e;color:#fff}
+  .cg{display:flex;flex-direction:column;gap:3px;min-width:0}
+  .line.her .cg{align-items:flex-end}
+  .txt{
+    padding:9px 14px;border-radius:14px;white-space:pre-wrap;word-break:break-word;
+    background:var(--panel2);border:1px solid var(--line2);
+  }
+  .line.her .txt{background:linear-gradient(145deg,#3d1424,#521a2c);border-color:#60223a}
+  .stamp{font:10px var(--mono);color:var(--dim2);letter-spacing:.4px;padding:0 3px}
+  .stamp em{font-style:normal;color:#6f648a}
+
+  .compose{flex:0 0 auto;padding:14px 22px 18px;border-top:1px solid var(--line);background:linear-gradient(0deg,#0d0b14,transparent)}
+  .composer{
+    display:flex;align-items:flex-end;gap:10px;background:var(--panel);
+    border:1px solid var(--line2);border-radius:16px;padding:9px 10px 9px 16px;
+    transition:border-color .18s, box-shadow .18s;
+  }
+  .composer:focus-within{border-color:#6b2a44;box-shadow:0 0 0 4px rgba(240,67,108,.08)}
+  .composer textarea{
+    flex:1;background:none;border:0;outline:none;color:var(--fg);resize:none;
+    font:14.5px/1.6 inherit;max-height:130px;min-height:24px;
+  }
+  .composer textarea::placeholder{color:var(--dim2)}
+  .send{
+    width:36px;height:36px;border-radius:50%;border:0;cursor:pointer;flex:0 0 auto;
+    background:linear-gradient(140deg,var(--hot),#b01d3c);color:#fff;font-size:15px;
+    display:grid;place-items:center;transition:.15s;
+  }
+  .send:hover{filter:brightness(1.15)}
+  .send:disabled{opacity:.4;cursor:default}
+  .subline{display:flex;gap:14px;align-items:center;padding:8px 4px 0;font:11px var(--mono);color:var(--dim2)}
+  .ghost{background:none;border:0;color:var(--dim);font:11.5px var(--mono);cursor:pointer;padding:2px 0}
+  .ghost:hover{color:var(--hot)}
+
+  /* ---- 右侧 ---- */
+  .side{display:flex;flex-direction:column;min-height:0}
+  .tabs{display:flex;padding:10px 14px 0;gap:4px;flex:0 0 auto}
+  .tab{
+    flex:1;background:none;border:0;border-bottom:2px solid transparent;color:var(--dim2);
+    font:11.5px var(--mono);padding:9px 4px;cursor:pointer;letter-spacing:.6px;transition:.15s;
+  }
+  .tab:hover{color:var(--dim)}
+  .tab.active{color:var(--fg);border-bottom-color:var(--hot)}
+  .pane{flex:1;overflow-y:auto;padding:16px 18px 22px;min-height:0}
+  .pane[hidden]{display:none}
+
+  .block + .block{margin-top:18px}
+  .block h3{font:10.5px var(--mono);color:var(--dim2);letter-spacing:1.6px;text-transform:uppercase;margin-bottom:9px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .card + .card{margin-top:8px}
+  .card p{font-size:13px;color:var(--fg)}
+  .card small{display:block;color:var(--dim2);font:10px var(--mono);margin-top:5px}
+  .chip{display:inline-block;padding:1px 7px;border-radius:6px;font:9.5px var(--mono);letter-spacing:.5px;
+    border:1px solid var(--line2);color:var(--dim);margin-right:6px;vertical-align:1px}
+  .chip.hot{color:#ff8fab;border-color:#5f2033;background:#2a0f18}
+  .mood{background:linear-gradient(135deg,#2a1220,#1b1424);border-color:#42213a}
+  .mood p{font-size:14px;color:#ffc7d6}
+  .empty{color:var(--dim2);font-size:12.5px;padding:6px 0}
+
+  .field{display:flex;gap:8px;align-items:center}
+  .field + .field{margin-top:9px}
+  .field label{font:10.5px var(--mono);color:var(--dim2);flex:0 0 auto;min-width:52px}
+  input[type=text], select{
+    flex:1;min-width:0;background:#0d0b15;border:1px solid var(--line2);border-radius:9px;
+    color:var(--fg);padding:8px 11px;font:13px inherit;outline:none;transition:.16s;
+  }
+  input[type=text]:focus, select:focus{border-color:#6b2a44;box-shadow:0 0 0 3px rgba(240,67,108,.08)}
+  .btn{
+    background:#221c31;border:1px solid var(--line2);color:var(--fg);border-radius:9px;
+    padding:8px 14px;font:12px var(--mono);cursor:pointer;white-space:nowrap;transition:.15s;
+  }
+  .btn:hover{border-color:#6b2a44;color:#fff}
+  .btn.primary{background:linear-gradient(140deg,var(--hot),#b01d3c);border-color:transparent;color:#fff}
+  .btn.primary:hover{filter:brightness(1.13)}
+  .btn:disabled{opacity:.4;cursor:default}
+  .btn.wide{width:100%}
+
+  .console{
+    font:11px/1.6 var(--mono);color:#a99ec0;background:#0b0912;border:1px solid var(--line);
+    border-radius:10px;padding:10px 12px;max-height:210px;overflow:auto;white-space:pre-wrap;word-break:break-word;
+  }
+  .dots{display:inline-flex;gap:3px;vertical-align:middle}
+  .dots i{width:4px;height:4px;border-radius:50%;background:var(--hot);animation:blink 1.2s infinite}
+  .dots i:nth-child(2){animation-delay:.2s}
+  .dots i:nth-child(3){animation-delay:.4s}
+  @keyframes blink{0%,100%{opacity:.25}50%{opacity:1}}
+
+  /* ---- toast：唯一的反馈方式，不再用弹窗 ---- */
+  #toasts{position:fixed;top:18px;right:22px;display:flex;flex-direction:column;gap:8px;z-index:99;pointer-events:none}
+  .toast{
+    background:#1c1629;border:1px solid var(--line2);border-left:3px solid var(--hot);
+    padding:10px 15px;border-radius:10px;font-size:13px;color:var(--fg);
+    box-shadow:0 10px 30px -8px rgba(0,0,0,.7);animation:slidein .2s ease-out;
+    max-width:330px;
+  }
+  .toast.ok{border-left-color:var(--ok)}
+  .toast.bad{border-left-color:#ff4d6d}
+  @keyframes slidein{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+
+  @media (max-width:1100px){
+    body{overflow:auto}
+    .stage{grid-template-columns:1fr}
+    .talk{border-right:0;border-bottom:1px solid var(--line);min-height:70vh}
+    .side{min-height:60vh}
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <header>
+    <div class="avatar">栀</div>
+    <div class="who">
+      <b>绯栀</b>
+      <span id="moodLine">正在连接…</span>
+    </div>
+    <div class="beats" id="beats"></div>
+  </header>
+
+  <div class="stage">
+    <section class="talk">
+      <div class="stream" id="stream"></div>
+      <div class="compose">
+        <div class="composer">
+          <textarea id="inp" rows="1" placeholder="跟她说点什么…（Enter 发送，Shift+Enter 换行）"></textarea>
+          <button class="send" id="btnSend" title="发送">↑</button>
+        </div>
+        <div class="subline">
+          <button class="ghost" id="btnVoice">用她的声音发这条</button>
+          <span id="composeHint"></span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="side">
+      <nav class="tabs">
+        <button class="tab active" data-pane="paneMind">她</button>
+        <button class="tab" data-pane="paneSing">唱</button>
+        <button class="tab" data-pane="paneSys">运行</button>
+      </nav>
+
+      <div class="pane" id="paneMind">
+        <div class="block">
+          <h3>此刻</h3>
+          <div id="moodBox"></div>
+        </div>
+        <div class="block">
+          <h3>她记得的事</h3>
+          <div id="factBox"></div>
+        </div>
+        <div class="block">
+          <h3>没说完的话</h3>
+          <div id="loopBox"></div>
+        </div>
+        <div class="block">
+          <h3>想让她改什么</h3>
+          <div class="card">
+            <textarea id="note" rows="3" style="width:100%;background:#0d0b15;border:1px solid var(--line2);border-radius:9px;color:var(--fg);padding:9px 11px;font:13px/1.6 inherit;resize:vertical;outline:none" placeholder="比如：语音里少用语气词 / 唱歌时情绪收一点"></textarea>
+            <div class="field" style="margin-top:9px;justify-content:flex-end">
+              <span id="noteHint" style="font:11px var(--mono);color:var(--dim2)"></span>
+              <button class="btn" id="btnNote">记下</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pane" id="paneSing" hidden>
+        <div class="block">
+          <h3>新歌 · 一条龙</h3>
+          <div class="card">
+            <div class="field"><label>歌名</label><input id="songName" type="text" placeholder="搁浅 周杰伦"></div>
+            <div class="field" style="justify-content:flex-end">
+              <button class="btn primary" id="btnNewSong">开跑</button>
+            </div>
+            <div class="console" id="songConsole" style="margin-top:10px;max-height:150px">空闲</div>
+          </div>
+        </div>
+        <div class="block">
+          <h3>成品 · 直接发微信</h3>
+          <div class="card">
+            <div class="field"><label>选段</label><select id="songPick"></select></div>
+            <div class="field">
+              <label>从</label><input id="songStart" type="text" value="83" style="flex:0 0 60px">
+              <label style="min-width:auto">秒起</label>
+              <input id="songDur" type="text" value="45" style="flex:0 0 60px">
+              <label style="min-width:auto">秒</label>
+            </div>
+            <div class="field" style="justify-content:flex-end">
+              <button class="btn" id="btnSendSong">发到微信</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pane" id="paneSys" hidden>
+        <div class="block">
+          <h3>心跳</h3>
+          <div class="card" id="beatBox"></div>
+        </div>
+        <div class="block">
+          <h3>日志</h3>
+          <div class="console" id="logBox"></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+<div id="toasts"></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function toast(msg, kind){
+  const el = document.createElement("div");
+  el.className = "toast" + (kind ? " " + kind : "");
+  el.textContent = msg;
+  $("#toasts").appendChild(el);
+  setTimeout(() => { el.style.opacity = "0"; el.style.transform = "translateX(14px)"; el.style.transition = ".25s"; }, 2600);
+  setTimeout(() => el.remove(), 3000);
+}
+
+async function jget(u){ const r = await fetch(u, {cache:"no-store"}); if(!r.ok) throw new Error(r.status); return r.json(); }
+async function jpost(u, b){
+  const r = await fetch(u, {method:"POST", headers:{"Content-Type":"application/json; charset=utf-8"}, body:JSON.stringify(b||{})});
+  return r.json();
+}
+
+/* ---------- 顶部心跳 ---------- */
+function beat(label, state, text){
+  const cls = state === true ? "on" : (state === false ? "off" : "");
+  return `<span class="beat ${cls}"><i></i>${label}${text?` <b>${esc(text)}</b>`:""}</span>`;
+}
+
+async function pollStatus(){
+  try{
+    const s = await jget("/api/status");
+    const w = s.worker||{}, svc = s.service||{}, wx = s.wechat||{}, g = s.gpu||{};
+    $("#beats").innerHTML = [
+      beat("在线", !!wx.running, wx.running ? "" : "离线"),
+      beat("接线", !!w.healthy, w.healthy ? "正常" : (w.phase||"?")),
+      beat("声音", !!svc.running, svc.running ? "" : "停"),
+      beat("显卡", null, g.used ? `${g.used}M` : "-"),
+    ].join("");
+    const c = s.store?.counts||{}, ob = s.store?.outbound||{};
+    $("#beatBox").innerHTML = `
+      <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font:12px var(--mono)">
+        <span style="color:var(--dim2)">收到</span><span>${c.inbound ?? "-"}</span>
+        <span style="color:var(--dim2)">自动回复</span><span>${c.auto_reply ?? "-"}</span>
+        <span style="color:var(--dim2)">主动找你</span><span>${c.proactive ?? "-"}</span>
+        <span style="color:var(--dim2)">已送达</span><span>${ob.submitted ?? "-"}</span>
+        <span style="color:var(--dim2)">hook</span><span>${w.stale_sec ?? "-"}s 前刷新</span>
+        <span style="color:var(--dim2)">功耗</span><span>${g.power ?? "-"} W</span>
+      </div>`;
+    const sel = $("#songPick"), keep = sel.value;
+    sel.innerHTML = (s.songs||[]).map(x => `<option value="${esc(x.name)}">${esc(x.name.replace(/_mix\.wav$/,""))} · ${x.mtime}</option>`).join("");
+    if(keep) sel.value = keep;
+  }catch(e){ /* 网络抖动不做打扰 */ }
+}
+
+/* ---------- 对话流 ---------- */
+let lastKey = "";
+let firstPaint = true;
+function dayLabel(ms){
+  const d = new Date(ms), now = new Date();
+  const sameDay = d.toDateString() === now.toDateString();
+  return sameDay ? "今天" : `${d.getMonth()+1}月${d.getDate()}日`;
+}
+
+async function pollTalk(){
+  try{
+    const rows = await jget("/api/messages?limit=60");
+    if(!Array.isArray(rows) || !rows.length) return;
+    const key = rows.length + ":" + (rows[0].id ?? "");
+    if(key === lastKey) return;
+    lastKey = key;
+    rows.reverse();   // store 按 id DESC 返回，倒过来才是时间正序
+    const box = $("#stream");
+    const bottom = box.scrollHeight - box.scrollTop - box.clientHeight < 90;
+    let html = "", lastDay = "";
+    for(const m of rows){
+      const ms = m.sent_at_ms || Date.now();
+      const day = dayLabel(ms);
+      if(day !== lastDay){ html += `<div class="daymark">${day}</div>`; lastDay = day; }
+      const her = (m.role||"").toLowerCase() === "assistant";
+      const time = new Date(ms).toLocaleTimeString("zh-CN",{hour12:false,hour:"2-digit",minute:"2-digit"});
+      const src = m.source ? `<em>${esc(m.source)}</em>` : "";
+      html += `<div class="line ${her?"her":""}">
+        <div class="face">${her?"栀":"你"}</div>
+        <div class="cg">
+          <div class="txt">${esc(m.text)}</div>
+          <div class="stamp">${time} ${src}</div>
+        </div>
+      </div>`;
+    }
+    box.innerHTML = html;
+    if(bottom || firstPaint){
+      const snap = () => { box.scrollTop = box.scrollHeight; };
+      snap();
+      requestAnimationFrame(snap);
+      setTimeout(snap, 120);
+      firstPaint = false;
+    }
+  }catch(e){}
+}
+
+/* ---------- 她 ---------- */
+async function pollMind(){
+  try{
+    const [mem, life] = await Promise.all([jget("/api/memory"), jget("/api/life")]);
+    const mood = life.mood;
+    if(mood && mood.state){
+      $("#moodLine").textContent = `${mood.state}${mood.cause ? " —— " + mood.cause : ""}`;
+      $("#moodBox").innerHTML = `<div class="card mood"><p>${esc(mood.state)}</p><small>${esc(mood.cause||"")} ${esc(mood.since||mood.at||"")}</small></div>`;
+    }else{
+      $("#moodLine").textContent = "安静着，没什么特别的心情";
+      $("#moodBox").innerHTML = `<div class="empty">现在没有明确的心情记录</div>`;
+    }
+    const facts = (mem.facts||[]).slice(-14).reverse();
+    $("#factBox").innerHTML = facts.length ? facts.map(f=>{
+      const t = typeof f === "string" ? f : (f.text || "");
+      const cert = f && f.certainty ? `<span class="chip">${esc(f.certainty)}</span>` : "";
+      const when = f && f.added ? `<small>${esc(f.added)}</small>` : "";
+      return `<div class="card"><p>${cert}${esc(t)}</p>${when}</div>`;
+    }).join("") : `<div class="empty">还没有形成记忆</div>`;
+
+    const loops = (life.loops||[]).filter(l => (l.status||"open") === "open").slice(-6).reverse();
+    $("#loopBox").innerHTML = loops.length ? loops.map(l=>{
+      const t = l.asked || l.text || "";
+      return `<div class="card"><p><span class="chip hot">等你回</span>${esc(t)}</p><small>${esc(l.asked_at||"")}${l.follow_ups?` · 追问 ${l.follow_ups} 次`:""}</small></div>`;
+    }).join("") : `<div class="empty">没有悬着的话题</div>`;
+  }catch(e){}
+}
+
+async function pollLogs(){
+  try{
+    const d = await jget("/api/logs?n=50");
+    $("#logBox").textContent = (d.lines||[]).join("\n") || "（暂无日志）";
+  }catch(e){}
+}
+
+/* ---------- 交互 ---------- */
+const inp = $("#inp");
+inp.addEventListener("input", () => {
+  inp.style.height = "auto";
+  inp.style.height = Math.min(inp.scrollHeight, 130) + "px";
+});
+inp.addEventListener("keydown", e => {
+  if(e.key === "Enter" && !e.shiftKey){ e.preventDefault(); sendText(); }
+});
+
+function busy(on, hint){
+  $("#btnSend").disabled = on;
+  $("#composeHint").textContent = hint || "";
+}
+
+async function sendText(){
+  const text = inp.value.trim();
+  if(!text) return;
+  busy(true, "发送中…");
+  try{
+    const r = await jpost("/api/send", {text});
+    if(r.ok){ inp.value = ""; inp.style.height = "auto"; lastKey = ""; pollTalk(); toast("已送达", "ok"); }
+    else toast("没发出去，检查一下微信连接", "bad");
+  }catch(e){ toast("连接面板失败了", "bad"); }
+  busy(false);
+}
+
+async function sendVoice(){
+  const text = inp.value.trim();
+  if(!text){ toast("先写点什么，我再念给她"); return; }
+  busy(true, "合成语音…");
+  try{
+    const r = await jpost("/api/voice", {text});
+    if(r.job){ inp.value = ""; inp.style.height = "auto"; watchJob(r.job, "语音"); }
+    else toast("语音合成没启动", "bad");
+  }catch(e){ toast("连接面板失败了", "bad"); }
+  busy(false);
+}
+
+async function watchJob(jid, label){
+  const line = $("#composeHint");
+  const tick = async () => {
+    try{
+      const j = await jget("/api/job?id=" + encodeURIComponent(jid));
+      const tail = (j.log||[]).slice(-1)[0] || "";
+      line.textContent = j.state === "running" ? `${label}：${tail}` : "";
+      if(j.state === "running"){ setTimeout(tick, 1400); return; }
+      if(j.state === "done"){ toast(`${label}已发出`, "ok"); lastKey = ""; pollTalk(); }
+      else toast(`${label}失败：${j.detail||"看看运行标签页"}`, "bad");
+    }catch(e){ setTimeout(tick, 2000); }
+  };
+  tick();
+}
+
+$("#btnSend").onclick = sendText;
+$("#btnVoice").onclick = sendVoice;
+
+$("#btnNote").onclick = async () => {
+  const text = $("#note").value.trim();
+  if(!text) return;
+  const r = await jpost("/api/note", {text});
+  if(r.ok){ $("#note").value = ""; $("#noteHint").textContent = "记下了"; toast("已记进需求清单", "ok"); setTimeout(()=>$("#noteHint").textContent="", 2400); }
+  else toast("没写进去", "bad");
+};
+
+$("#btnNewSong").onclick = async () => {
+  const song = $("#songName").value.trim();
+  if(!song){ toast("先给我个歌名"); return; }
+  const box = $("#songConsole");
+  box.innerHTML = `启动中 <span class="dots"><i></i><i></i><i></i></span>`;
+  const r = await jpost("/api/newsong", {song, params:{index_rate:0, protect:0.5, eq:1.2}});
+  if(!r.job){ toast("没启动起来", "bad"); box.textContent = JSON.stringify(r); return; }
+  const tick = async () => {
+    try{
+      const j = await jget("/api/job?id=" + encodeURIComponent(r.job));
+      box.textContent = (j.log||[]).join("\n") || "…";
+      box.scrollTop = box.scrollHeight;
+      if(j.state === "running"){ setTimeout(tick, 1800); return; }
+      if(j.state === "done"){ toast("歌做好了：" + (j.detail||""), "ok"); pollStatus(); }
+      else toast("流水线断了：" + (j.detail||""), "bad");
+    }catch(e){ setTimeout(tick, 2500); }
+  };
+  tick();
+};
+
+$("#btnSendSong").onclick = async () => {
+  const name = $("#songPick").value;
+  if(!name){ toast("还没有成品可以发"); return; }
+  const r = await jpost("/api/song", {name, start:+$("#songStart").value||83, dur:+$("#songDur").value||45});
+  if(r.job){ toast("开始发送", "ok"); watchJob(r.job, "翻唱"); }
+  else toast("发送没启动", "bad");
+};
+
+$$(".tab").forEach(t => t.onclick = () => {
+  $$(".tab").forEach(x => x.classList.toggle("active", x === t));
+  $$(".pane").forEach(p => p.hidden = p.id !== t.dataset.pane);
+  if(t.dataset.pane === "paneSys") pollLogs();
+});
+
+pollStatus(); pollTalk(); pollMind();
+setInterval(pollStatus, 3500);
+setInterval(pollTalk, 4500);
+setInterval(pollMind, 12000);
+setInterval(() => { if(!$("#paneSys").hidden) pollLogs(); }, 6000);
+</script>
+</body>
+</html>
